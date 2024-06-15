@@ -1,5 +1,3 @@
-<!-- match_add_form.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +17,23 @@
             $query = "SELECT id, name FROM plans";
             $result = mysqli_query($conn, $query);
 
-            // Loop through results and create options for dropdown
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+            // Check if any rows were returned
+            if ($result) {
+                if (mysqli_num_rows($result) > 0) {
+                    // Loop through results and create options for dropdown
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                    }
+                } else {
+                    echo "<option value=''>No plans available</option>";
+                }
+                // Free result set
+                mysqli_free_result($result);
+            } else {
+                echo "Error: " . mysqli_error($conn);
             }
 
-            // Close database connection and free result set
-            mysqli_free_result($result);
+            // Close database connection
             mysqli_close($conn);
             ?>
         </select>
