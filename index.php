@@ -1,157 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colloh Best Free Odds</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand" style="margin: 0 auto; display: block; text-align: center;" href="#">COLLOH BEST FREE ODDS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- OdiPlans Dropdown Menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="odiPlansDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            OdiPlans
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="odiPlansDropdown">
-                            <a class="dropdown-item" href="#plan1">PLAN 1</a>
-                            <a class="dropdown-item" href="#plan2">PLAN 2</a>
-                            <a class="dropdown-item" href="#plan3">PLAN 3</a>
-                        </div>
-                    </li>
-                    <!-- Login Button with Icon -->
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="./match_add_form.php">
-                            <span><i class="fas fa-sign-in-alt text-warnig"></i> Login</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="container">
-        <!-- PLAN 1 -->
-        <div id="plan1" class="plan card">
-            <div class="card-body">
-                <h5 class="card-title text-center">PLAN 1 (3 MATCHES)</h5>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Matches</th>
-                            <th>Choices</th>
-                            <th>Total Odds</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Team A vs Team B</td>
-                            <td>Team B to win</td>
-                            <td class="text-success">2.56</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<?php include './layout/header.php'; ?>
 
-        <!-- PLAN 2 -->
-        <div id="plan2" class="plan card">
-            <div class="card-body">
-                <h5 class="card-title text-center">PLAN 2 (6 MATCHES)</h5>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Matches</th>
-                            <th>Choices</th>
-                            <th>Total Odds</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Team A vs Team B</td>
-                            <td>Team B to win</td>
-                            <td class="text-primary">5</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- PLAN 3 -->
-        <div id="plan3" class="plan card">
-            <div class="card-body">
-                <h5 class="card-title text-center">PLAN 3 (10 MATCHES)</h5>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Matches</th>
-                            <th>Choices</th>
-                            <th>Total Odds</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Team A vs Team B</td>
-                            <td>Team B to win</td>
-                            <td class="text-info">5</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer text-center">
-            <p>&copy; 2024 Design Team weavex WebDesigns: 
-                <span>
-                    <i class="fas fa-phone-alt text-success"></i> <!-- Call icon -->
-                    Text or Call <!-- Phone number -->
-                </span>
-            </a>
-            <a href="https://wa.me/245111920010" target="_blank">
-                <span>
-                    <i class="fab fa-whatsapp text-success" style="margin-left: 5px;"></i> <!-- WhatsApp icon -->
-                    Chat via WhatsApp <!-- Phone number -->
-                </span>
-            </a>
-                <br>
-                <p class="text-info">Your Local time <span id="currentTime"></span></p>
+<div class="container">
+    <!-- PLAN 1 -->
+    <div id="plan1" class="plan card">
+        <div class="card-body">
+            <h5 class="card-title text-center">PLAN 1 (3 MATCHES)</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Matches</th>
+                        <th>Choices</th>
+                        <th>Total Odds</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team A vs Team B</td>
+                        <td>Team B to win</td>
+                        <td class="text-success">2.56</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- PLAN 2 -->
+    <div id="plan2" class="plan card">
+        <div class="card-body">
+            <h5 class="card-title text-center">PLAN 2 (6 MATCHES)</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Matches</th>
+                        <th>Choices</th>
+                        <th>Total Odds</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team A vs Team B</td>
+                        <td>Team B to win</td>
+                        <td class="text-primary">5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-    <!-- JavaScript to display current time -->
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString();
-            document.getElementById('currentTime').textContent = formattedTime;
-        }
+    <!-- PLAN 3 -->
+    <div id="plan3" class="plan card">
+        <div class="card-body">
+            <h5 class="card-title text-center">PLAN 3 (10 MATCHES)</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Matches</th>
+                        <th>Choices</th>
+                        <th>Total Odds</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team A vs Team B</td>
+                        <td>Team B to win</td>
+                        <td class="text-info">5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-        // Update the time every second
-        setInterval(updateTime, 1000);
-
-        // Set initial time
-        updateTime();
-    </script>
-</body>
-</html>
+<?php include './layout/footer.php'; ?>
