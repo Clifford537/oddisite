@@ -6,7 +6,9 @@
     <title>Colloh Best Free Odds</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom CSS -->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -35,7 +37,7 @@
                     <!-- Login Button with Icon -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">
-                            Login <i class="fas fa-sign-in-alt"></i>
+                            <span><i class="fas fa-sign-in-alt text-warnig"></i> Login</span>
                         </a>
                     </li>
                 </ul>
@@ -115,7 +117,20 @@
 
         <!-- Footer -->
         <div class="footer text-center">
-            <p>&copy; 2024 Design Team weavex WebDesigns: 07060000786 <br>T : <span id="currentTime"></span></p>
+            <p>&copy; 2024 Design Team weavex WebDesigns: 
+                <span>
+                    <i class="fas fa-phone-alt text-success"></i> <!-- Call icon -->
+                    Text or Call <!-- Phone number -->
+                </span>
+            </a>
+            <a href="https://wa.me/245111920010" target="_blank">
+                <span>
+                    <i class="fab fa-whatsapp text-success" style="margin-left: 5px;"></i> <!-- WhatsApp icon -->
+                    Chat via WhatsApp <!-- Phone number -->
+                </span>
+            </a>
+                <br>
+                <p class="text-info">Your Local time <span id="currentTime"></span></p>
         </div>
     </div>
 
@@ -124,8 +139,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-   
-  
     <!-- JavaScript to display current time -->
     <script>
         function updateTime() {
