@@ -26,7 +26,7 @@
                     <!-- OdiPlans Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="odiPlansDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            OdiPlans
+                            Super PLans
                         </a>
                         <div class="dropdown-menu" aria-labelledby="odiPlansDropdown">
                             <a class="dropdown-item" href="#plan1">PLAN 1</a>
@@ -36,7 +36,7 @@
                     </li>
                     <!-- Login Button with Icon -->
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="./login.php">
+                        <a class="nav-link text-white" href="match_add_form.php">
                             <span><i class="fas fa-sign-in-alt text-warning"></i> Login</span>
                         </a>
                     </li>

@@ -1,7 +1,8 @@
 <?php
 // Include database connection
 include 'dbconnection.php';
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 // Initialize session
 session_start();
 
@@ -32,19 +33,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Invalid password
-            echo "Invalid password. <a href='login.php'>Try again</a>";
+            $_SESSION['error'] = "Invalid password";
         }
     } else {
         // User not found
-        echo "User not found. <a href='login.php'>Try again</a>";
+        $_SESSION['error'] = "User not found";
     }
 
     $stmt->close();
 } else {
     // Redirect to login page if accessed directly without POST method
-    header("Location: login.php");
-    exit();
+    $_SESSION['error'] = "Access denied";
 }
+
+// Redirect back to login page with error message
+header("Location: login.php?error=" . urlencode($_SESSION['error']));
+exit();
 
 $conn->close();
 ?>
