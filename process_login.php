@@ -19,8 +19,8 @@ $result = $stmt->get_result();
 
 if ($result->num_rows == 1) {
     $user = $result->fetch_assoc();
-    // Verify plaintext password (not recommended for production)
-    if ($password === $user['password_hash']) {
+    // Verify hashed password
+    if (password_verify($password, $user['password_hash'])) {
         // Password is correct, set session variables
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
@@ -30,7 +30,7 @@ if ($result->num_rows == 1) {
         exit();
     } else {
         // Invalid password
-        echo "Invalid password. <a href='login.php'>Try again</a>";
+        echo "Invalid password. <a href='dashboard.php'>Try again</a>";
     }
 } else {
     // User not found

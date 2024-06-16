@@ -6,11 +6,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^dashboard/?$ dashboard.php [L]
 
-# Route for dbconnection.php (if needed)
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_FILENAME}.php -f
-# RewriteRule ^dbconnection/?$ dbconnection.php [L]
-
 # Route for index.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
@@ -24,7 +19,7 @@ RewriteRule ^login/?$ login.php [L]
 # Route for login_process.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^login_process/?$ login_process.php [L]
+RewriteRule ^process_login/?$ process_login.php [L]
 
 # Route for logout.php
 RewriteCond %{REQUEST_FILENAME} !-d
