@@ -1,40 +1,54 @@
 <?php
-// Initialize session
+// Start session to access session variables
 session_start();
 
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
+// Check if user is logged in and their usertype
+if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
     // Redirect to login page if not logged in
     header("Location: login.php");
     exit();
 }
 
-// Check if usertype is Admin or Superadmin
-if ($_SESSION['usertype'] !== 'Admin' && $_SESSION['usertype'] !== 'Superadmin') {
-    // Redirect to login page with error message if not authorized
-    $_SESSION['error'] = "Access denied. You do not have permission to access this page.";
-    header("Location: login.php");
-    exit();
-}
-
-// Display dashboard content based on usertype
+// Check if user is Superadmin, Admin, or User
+$isSuperadmin = ($_SESSION['usertype'] === 'Superadmin');
+$isAdmin = ($_SESSION['usertype'] === 'Admin');
+$isUser = ($_SESSION['usertype'] === 'User');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <style>
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Welcome <?php echo $_SESSION['usertype'] . ": " . $_SESSION['username']; ?></h2>
-    
-    <!-- Dashboard buttons based on usertype -->
-    <?php if ($_SESSION['usertype'] === 'Admin' || $_SESSION['usertype'] === 'Superadmin'): ?>
-        <button onclick="location.href='match_add_form.php'">Add Match</button>
+    <h2>Welcome, <?php echo $_SESSION['username']; ?>!</h2>
+
+    <?php if ($isSuperadmin || $isAdmin): ?>
+        <div class="button-container">
+            <button onclick="location.href='add_match.php'">Add Match</button>
+            <button onclick="location.href='delete_match.php'">Delete Match</button>
+            <button onclick="location.href='edit_match.php'">Edit Match</button>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($isSuperadmin): ?>
+        <div class="button-container">
+            <button onclick="location.href='delete_users.php'">Delete Users</button>
+            <button onclick="location.href='add_user.php'">Add User</button>
+        </div>
     <?php endif; ?>
     
-    <!-- Additional buttons or content based on usertype -->
-    
-    <p><a href="logout.php">Logout</a></p>
+    <div class="button-container">
+        <button onclick="location.href='logout.php'">Logout</button>
+    </div>
 </body>
 </html>
