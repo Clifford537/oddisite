@@ -32,11 +32,12 @@
                             <a class="dropdown-item" href="#plan1">PLAN 1</a>
                             <a class="dropdown-item" href="#plan2">PLAN 2</a>
                             <a class="dropdown-item" href="#plan3">PLAN 3</a>
+                            <a class="dropdown-item" href="./jackpot.php">Jackpot</a>
                         </div>
                     </li>
                     <!-- Login Button with Icon -->
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="match_add_form.php">
+                        <a class="nav-link text-white" href="manage.php">
                             <span><i class="fas fa-sign-in-alt text-warning"></i> Login</span>
                         </a>
                     </li>

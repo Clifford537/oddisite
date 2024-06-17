@@ -9,7 +9,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SE
 }
 
 
-$isSuperadmin = ($_SESSION['usertype'] === 'Superadmin');
+$isSuperadmin = ($_SESSION['usertype'] === 'SU');
 $isAdmin = ($_SESSION['usertype'] === 'Admin');
 $isUser = ($_SESSION['usertype'] === 'User');
 

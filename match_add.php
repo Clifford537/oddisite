@@ -1,5 +1,3 @@
-<!-- match_add.php -->
-
 <?php
 // Include database connection script
 require_once 'dbconnection.php';

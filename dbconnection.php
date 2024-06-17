@@ -1,11 +1,9 @@
-<!-- dbconnection.php -->
-
 <?php
 // Database configuration
-$servername = "localhost";  // Change if your database server is different
-$username = "root";     // Replace with your MySQL username
-$password = "";     // Replace with your MySQL password
-$dbname = "oddshop";  // Replace with your MySQL database name
+$servername = "localhost";  
+$username = "root";     
+$password = "";     
+$dbname = "shop";  
 $port = 3306;
 
 // Create connection
