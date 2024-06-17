@@ -19,7 +19,7 @@ jobs:
           echo "$line" >> $GITHUB_ENV
         done
 
-    - name: Upload to InfinityFree
+    - name: Upload to hostnexo
       uses: SamKirkland/FTP-Deploy-Action@4.3.0  # Ensures Node.js 20 is used
       with:
         server: ${{ env.FTP_SERVER }}
