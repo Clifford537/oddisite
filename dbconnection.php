@@ -2,8 +2,8 @@
 // Database configuration
 $servername = "localhost";  
 $username = "root";     
-$password = "";     
-$dbname = "shop";  
+$password = "GCEPC3_M_aBWssB";     
+$dbname = "colloh_shop";  
 $port = 3306;
 
 // Create connection
