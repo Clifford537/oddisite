@@ -42,7 +42,7 @@
                     </li>
                     <!-- Login Button with Icon -->
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="manage">
+                        <a class="nav-link text-white" href="login.php">
                             <span><i class="fas fa-sign-in-alt text-warning"></i> Login</span>
                         </a>
                     </li>
