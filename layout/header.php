@@ -35,6 +35,11 @@
                             <a class="dropdown-item" href="jackpots">Jackpot</a>
                         </div>
                     </li>
+                    <li>
+                    <a class="nav-link text-white" href="jackpots">
+                            <span><i class="fas fa-sig1n-in-alt text-warning"></i> Jackpots </span>
+                        </a>
+                    </li>
                     <!-- Login Button with Icon -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="manage">
