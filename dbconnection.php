@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $servername = "localhost";  
-$username = "root";     
+$username = "colloh_collo";     
 $password = "GCEPC3_M_aBWssB";     
 $dbname = "colloh_shop";  
 $port = 3306;
