@@ -1,18 +1,17 @@
-<?php include '../layout/header.php'; ?>
 
 <?php
 // Include the database connection
 include '../dbconnection.php';
 
-// Fetch user types from the database
-$query = "SELECT id, usertype FROM usertypes";
+// Fetch distinct user types from the database
+$query = "SELECT DISTINCT usertype FROM usertypes";
 $result = $conn->query($query);
 
 $usertypes = [];
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $usertypes[] = $row;
+        $usertypes[] = $row['usertype'];
     }
 }
 
@@ -28,9 +27,9 @@ $conn->close();
     <h2>Add User Data</h2>
     <form action="add_user.php" method="post">
         <label for="usertype">User Type:</label><br>
-        <select id="usertype" name="usertype_id" required>
+        <select id="usertype" name="usertype" required>
             <?php foreach ($usertypes as $usertype): ?>
-                <option value="<?= htmlspecialchars($usertype['id']) ?>"><?= htmlspecialchars($usertype['usertype']) ?></option>
+                <option value="<?= htmlspecialchars($usertype) ?>"><?= htmlspecialchars($usertype) ?></option>
             <?php endforeach; ?>
         </select><br><br>
 
@@ -42,7 +41,5 @@ $conn->close();
 
         <input type="submit" value="Add User">
     </form>
-
-    <?php include '../layout/footer.php'; ?>
 </body>
 </html>

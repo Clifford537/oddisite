@@ -32,7 +32,7 @@
                             <a class="dropdown-item" href="#plan1">PLAN 1</a>
                             <a class="dropdown-item" href="#plan2">PLAN 2</a>
                             <a class="dropdown-item" href="#plan3">PLAN 3</a>
-                            <a class="dropdown-item" href="./jackpot.php">Jackpot</a>
+                            <a class="dropdown-item" href="jackpots.php">Jackpot</a>
                         </div>
                     </li>
                     <!-- Login Button with Icon -->
