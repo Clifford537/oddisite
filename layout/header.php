@@ -31,10 +31,10 @@
                             Super PLans
                         </a>
                         <div class="dropdown-menu" aria-labelledby="odiPlansDropdown">
-                            <a class="dropdown-item" href="#plan1">PLAN 1</a>
-                            <a class="dropdown-item" href="#plan2">PLAN 2</a>
-                            <a class="dropdown-item" href="#plan3">PLAN 3</a>
-                            <a class="dropdown-item" href="jackpots">Jackpot</a>
+                            <a class="dropdown-item" href="index">PLAN 1</a>
+                            <a class="dropdown-item" href="index">PLAN 2</a>
+                            <a class="dropdown-item" href="index">PLAN 3</a>
+                            <a class="dropdown-item" href="index">Jackpot</a>
                         </div>
                     </li>
                     <li>
