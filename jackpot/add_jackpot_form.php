@@ -21,29 +21,85 @@ $conn->close();
 include '../layout/header.php';
 ?>
 
-    <h2 class="form-heading">Add Jackpot</h2>
-    <form action="add_jackpot.php" method="post" class="register-form">
-        <label for="jackpottype">Jackpot Type:</label>
-        <select id="jackpottype" name="jackpottype_id" required>
-            <?php foreach ($jackpottypes as $jackpottype): ?>
-                <option value="<?= htmlspecialchars($jackpottype['id']) ?>"><?= htmlspecialchars($jackpottype['type']) ?></option>
-            <?php endforeach; ?>
-        </select>
+<h2 class="form-heading">Add Jackpot</h2>
+<style>
+    .register-form {
+        max-width: 430px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-height: fit-content;
+    }
 
-        <label for="team1">Team 1:</label>
-        <input type="text" id="team1" name="team1" required>
+    .register-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
 
-        <label for="team2">Team 2:</label>
-        <input type="text" id="team2" name="team2" required>
+    .register-form input[type="text"],
+    .register-form input[type="date"],
+    .register-form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-        <label for="win">Winning Team/Outcome:</label>
-        <input type="text" id="win" name="win" required>
+    .register-form input[type="submit"] {
+        width: 50%;
+        padding: 12px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        display: block;
+        margin: 0 auto;
+    }
 
-        <label for="date_played">Date Played:</label>
-        <input type="date" id="date_played" name="date_played" required>
+    .register-form input[type="submit"]:hover {
+        background-color: #218838;
+    }
 
-        <input type="submit" value="Add Jackpot">
-    </form>
+    .form-heading {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+</style>
+
+<form action="add_jackpot.php" method="post" class="register-form">
+    <label for="jackpottype">Jackpot Type:</label>
+    <select id="jackpottype" name="jackpottype_id" required>
+        <?php foreach ($jackpottypes as $jackpottype): ?>
+            <option value="<?= htmlspecialchars($jackpottype['id']) ?>"><?= htmlspecialchars($jackpottype['type']) ?></option>
+        <?php endforeach; ?>
+    </select>
+
+    <label for="team1">Team 1:</label>
+    <input type="text" id="team1" name="team1" required>
+
+    <label for="team2">Team 2:</label>
+    <input type="text" id="team2" name="team2" required>
+
+    <label for="win">Winning Team/Outcome:</label>
+    <input type="text" id="win" name="win" required>
+
+    <label for="date_played">Date Played:</label>
+    <input type="date" id="date_played" name="date_played" required>
+
+    <input type="submit" value="Add Jackpot">
+</form>
 
 <?php
 // Include the footer file
