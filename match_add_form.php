@@ -6,41 +6,42 @@
         .register-form {
             max-width: 430px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 15px;
             background-color: #ffffff;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-height: fit-content;
         }
 
         .register-form label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: bold;
             color: #333;
+            font-size: 14px;
         }
 
         .register-form input[type="text"],
         .register-form input[type="date"],
         .register-form select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 8px;
+            margin-bottom: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-size: 14px;
         }
 
         .register-form input[type="submit"] {
             width: 50%;
-            padding: 12px;
+            padding: 10px;
             background-color: #28a745;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             transition: background-color 0.3s ease;
             display: block;
             margin: 0 auto;
@@ -52,8 +53,8 @@
 
         .form-heading {
             text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 20px;
+            margin-bottom: 15px;
             color: #333;
         }
     </style>
