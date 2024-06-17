@@ -5,7 +5,7 @@
                 <i class="fas fa-phone-alt text-success"></i> <!-- Call icon -->
                 Text or Call <!-- Phone number -->
             </span>
-            <a href="https://wa.me/245706000786" target="_blank">
+            <a href="https://wa.me/254706000786" target="_blank">
                 <span>
                     <i class="fab fa-whatsapp text-success" style="margin-left: 5px;"></i> <!-- WhatsApp icon -->
                     Chat via WhatsApp <!-- Phone number -->

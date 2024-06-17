@@ -109,4 +109,3 @@ INSERT INTO jackpottypes (type) VALUES ('Betpower');
 INSERT INTO jackpottypes (type) VALUES ('Mozzartbet');
 INSERT INTO jackpottypes (type) VALUES ('Odibet');
 
-
