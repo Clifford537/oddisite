@@ -16,12 +16,11 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Jackpot</title>
-</head>
-<body>
+<?php
+// Include the header file
+include 'layout/header.php';
+?>
+
     <h2>Add Jackpot</h2>
     <form action="add_jackpot.php" method="post">
         <label for="jackpottype">Jackpot Type:</label><br>
@@ -45,5 +44,8 @@ $conn->close();
 
         <input type="submit" value="Add Jackpot">
     </form>
-</body>
-</html>
+
+<?php
+// Include the footer file
+include 'layout/footer.php';
+?>
