@@ -8,7 +8,33 @@ body {
     padding: 0 15px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 1200px; /* Maximum width for larger screens */
 }
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px; /* Adjust maximum width for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px; /* Adjust maximum width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px; /* Adjust maximum width for mobile devices */
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px; /* Reduce padding for extra small screens */
+    }
+}
+
 
 .footer {
     background-color: #343a40;
@@ -183,11 +209,13 @@ main {
             padding: 12px 20px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
+            display: block;
             font-size: 16px;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-left: 39% ;
+            margin-right: 50%;
         }
 
         .login-button:hover {
@@ -198,4 +226,58 @@ main {
             color: #888;
             text-align: center;
             margin-top: 10px;
+        }
+/*reg */
+        .register-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .register-form input[type="text"],
+        .register-form input[type="date"],
+        .register-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .register-form input[type="submit"] {
+            width: 50%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin-right: 25%;
+            margin-left: 25%;
+        }
+
+        .register-form input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .form-heading {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
         }

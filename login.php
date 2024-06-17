@@ -18,9 +18,9 @@ $conn->close();
 ?>
 <?php include './layout/header.php'; ?>
 <body>
-  <h2 class="login-heading">Login</h2>
+  <h2 class="login-heading"></h2>
     <form action="login_process.php" method="post" class="login-form">
-        <p class="text-dark ">Dear User enter your login information</p>
+        <p class="text-dark login-heading">LOGIN</p>
         <label for="usertype" class="login-label">User Type:</label><br>
         <select id="usertype" name="usertype" required class="login-select">
             <?php foreach ($usertypes as $usertype): ?>
