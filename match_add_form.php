@@ -1,10 +1,65 @@
 <?php include './layout/header.php'; ?>
 
-<h2 class="text-center mt-4 mb-4">Add Match</h2>
+<h2 class="form-heading">Add Match</h2>
 <div class="container">
-    <form action="match_add.php" method="POST">
+    <style>
+        .register-form {
+            max-width: 430px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-height: fit-content;
+        }
+
+        .register-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .register-form input[type="text"],
+        .register-form input[type="date"],
+        .register-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .register-form input[type="submit"] {
+            width: 50%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .register-form input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .form-heading {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+    <form action="match_add.php" method="POST" class="register-form">
         <label for="plan_id">Select Plan:</label>
-        <select id="plan_id" name="plan_id" class="form-control mb-2" required>
+        <select id="plan_id" name="plan_id" required>
             <?php
             // Include database connection script
             require_once 'dbconnection.php';
@@ -34,18 +89,18 @@
             ?>
         </select>
         <label for="team1">Team 1:</label>
-        <input type="text" id="team1" name="team1" class="form-control mb-2" required>
+        <input type="text" id="team1" name="team1" required>
         <label for="team2">Team 2:</label>
-        <input type="text" id="team2" name="team2" class="form-control mb-2" required>
+        <input type="text" id="team2" name="team2" required>
         <label for="odds_team1">Odds for Team 1:</label>
-        <input type="text" id="odds_team1" name="odds_team1" class="form-control mb-2" required>
+        <input type="text" id="odds_team1" name="odds_team1" required>
         <label for="odds_team2">Odds for Team 2:</label>
-        <input type="text" id="odds_team2" name="odds_team2" class="form-control mb-2" required>
+        <input type="text" id="odds_team2" name="odds_team2" required>
         <label for="win_team">Winning Team:</label>
-        <input type="text" id="win_team" name="win_team" class="form-control mb-2" required>
+        <input type="text" id="win_team" name="win_team" required>
         <label for="date_played">Date Played:</label>
-        <input type="date" id="date_played" name="date_played" class="form-control mb-2" required>
-        <input type="submit" value="Add Match" class="btn btn-primary">
+        <input type="date" id="date_played" name="date_played" required>
+        <input type="submit" value="Add Match">
     </form>
 </div>
 
