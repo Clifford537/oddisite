@@ -2,6 +2,7 @@
     <div class="footer text-center">
         <p>&copy; 2024 Design Team weavex WebDesigns: 
             <span>
+            <a href="https://wa.me/254706000786" target="_blank">
                 <i class="fas fa-phone-alt text-success"></i> <!-- Call icon -->
                 Text or Call <!-- Phone number -->
             </span>
@@ -11,6 +12,10 @@
                     Chat via WhatsApp <!-- Phone number -->
                 </span>
             </a>
+        </p>
+        <p>Views tearms and conditions</p>
+        <p>
+            <li>Gambling is addictive</li>
         </p>
         <p class="text-info">Your Local time <span id="currentTime"></span></p>
     </div>
