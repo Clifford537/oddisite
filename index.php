@@ -9,9 +9,9 @@
 
             // Define plans with their respective maximum match counts
             $plans = array(
-                array('id' => 1, 'name' => 'PLAN 1 (3 MATCHES)', 'max_matches' => 3),
-                array('id' => 2, 'name' => 'PLAN 2 (6 MATCHES)', 'max_matches' => 6),
-                array('id' => 3, 'name' => 'PLAN 3 (10 MATCHES)', 'max_matches' => 10)
+                array('id' => 1, 'name' => 'PLAN 1 (3 MATCHES)', 'max_matches' => 50),
+                array('id' => 2, 'name' => 'PLAN 2 (6 MATCHES)', 'max_matches' => 50),
+                array('id' => 3, 'name' => 'PLAN 3 (10 MATCHES)', 'max_matches' => 50)
             );
 
             // Iterate through each plan
