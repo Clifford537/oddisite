@@ -46,24 +46,24 @@ $pageTitle = "View Matches";
                 <ul class="navbar-nav">
                     <!-- OdiPlans Dropdown Menu -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="index" id="odiPlansDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-white" href="../index" id="odiPlansDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Super PLans
                         </a>
                         <div class="dropdown-menu" aria-labelledby="odiPlansDropdown">
-                            <a class="dropdown-item" href="./index">PLAN 1</a>
-                            <a class="dropdown-item" href="./index">PLAN 2</a>
-                            <a class="dropdown-item" href="./index">PLAN 3</a>
-                            <a class="dropdown-item" href="./index">Jackpot</a>
+                            <a class="dropdown-item" href="../index">PLAN 1</a>
+                            <a class="dropdown-item" href="../index">PLAN 2</a>
+                            <a class="dropdown-item" href="../index">PLAN 3</a>
+                            <a class="dropdown-item" href="../index">Jackpot</a>
                         </div>
                     </li>
                     <li>
-                    <a class="nav-link text-white" href="./jackpots">
+                    <a class="nav-link text-white" href="../jackpots">
                             <span><i class="fas fa-sig1n-in-alt text-warning"></i> Jackpots </span>
                         </a>
                     </li>
                     <!-- Login Button with Icon -->
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="./login.php">
+                        <a class="nav-link text-white" href="../login.php">
                             <span><i class="fas fa-sign-in-alt text-warning"></i> Login</span>
                         </a>
                     </li>
