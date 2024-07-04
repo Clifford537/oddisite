@@ -1,8 +1,8 @@
 <?php
 // Database configuration
-$servername = "localhost";  
-$username = "colloh_collo";     
-$password = "GCEPC3_M_aBWssB";     
+$servername = "localhost$";  
+$username = "colloh_collo$";     
+$password = "GCEPC3_M_aBWssB$";     
 $dbname = "colloh_shop";  
 $port = 3300;
 
