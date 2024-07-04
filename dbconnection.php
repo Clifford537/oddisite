@@ -4,7 +4,7 @@ $servername = "localhost";
 $username = "colloh_collo";     
 $password = "GCEPC3_M_aBWssB";     
 $dbname = "colloh_shop";  
-$port = 3306;
+$port = 3300;
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname,$port );

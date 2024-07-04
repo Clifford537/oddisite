@@ -52,6 +52,7 @@ BEGIN
 END $$
 
 DELIMITER ;
+-- Create the matchtype table
 CREATE TABLE matchtype (
     id INT AUTO_INCREMENT PRIMARY KEY,
     type VARCHAR(50)
@@ -60,14 +61,14 @@ CREATE TABLE matchtype (
 -- Create the matches table
 CREATE TABLE matches (
     match_id INT AUTO_INCREMENT PRIMARY KEY,
-    type_id INT,
+    type VARCHAR(50),
     team_1 VARCHAR(50),
     team_2 VARCHAR(50),
     team_1_odds DECIMAL(5, 2),
     team_2_odds DECIMAL(5, 2),
     winteam VARCHAR(50),
     match_date DATE,
-    FOREIGN KEY (type_id) REFERENCES matchtype(id)
+    FOREIGN KEY (type) REFERENCES matchtype(type)
 );
 
 
