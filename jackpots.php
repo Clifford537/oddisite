@@ -40,7 +40,7 @@
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title text-center">' . $jackpottype_name . '</h5>';
                 echo '<table class="table table-bordered">';
-                echo '<thead><tr><th>Team 1</th><th>Team 2</th><th>Win</th><th>Date Played</th></tr></thead>';
+                echo '<thead><tr><th>Date Played</th><th>Game</th><th>Win</th></tr></thead>';
                 echo '<tbody>';
 
                 // Display jackpots data with maximum of 17 matches
@@ -50,10 +50,9 @@
                     }
 
                     echo '<tr>';
-                    echo '<td>' . $row['team1'] . '</td>';
-                    echo '<td>' . $row['team2'] . '</td>';
-                    echo '<td>' . $row['win'] . '</td>';
                     echo '<td>' . $row['date_played'] . '</td>';
+                    echo '<td>' . $row['team1'] . ' vs ' . $row['team2'] . '</td>';
+                    echo '<td>' . $row['win'] . '</td>';
                     echo '</tr>';
 
                     $match_count++;
