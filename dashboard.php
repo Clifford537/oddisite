@@ -23,7 +23,7 @@ $pageTitle = "Dashboard";
 
 <?php if ($isSuperadmin || $isAdmin): ?>
     <div class="button-container">
-        <button onclick="location.href='match_add_form'" class="dashboard-button">Add Plans</button>
+        <button onclick="location.href='match_add_form'" class="dashboard-button">Add League</button>
         <button onclick="location.href='./jackpot/add_jackpot_form'" class="dashboard-button">Add Jackpots</button>
         <button onclick="location.href='./views/view_plans'" class="dashboard-button">View Plans</button>
         <button onclick="location.href='./views/view_jackpot'" class="dashboard-button">View Jackpot</button>
