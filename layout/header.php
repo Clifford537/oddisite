@@ -28,7 +28,7 @@
                 <ul class="navbar-nav">
                     <!-- OdiPlans Dropdown Menu -->
                        
-                    <li>
+                   <li>
                     <a class="nav-link text-white" href="index">
                             <span><i class="fas fa-sig1n-in-alt text-warning"></i>League Predictons </span>
                         </a>
@@ -41,6 +41,22 @@
                     <li>
                     <a class="nav-link text-white" href="jackpots">
                             <span><i class="fas fa-sig1n-in-alt text-warning"></i> Jackpots </span>
+                        </a>
+                    </li>
+                    <li>
+                    <a class="nav-link text-white" href="aboutus">
+                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>About us</span>
+                        </a>
+                    </li>
+                    <li>
+                    <a class="nav-link text-white" href="aboutus">
+                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>contact</span>
+                        </a>
+                    </li>
+
+                    <li>
+                    <a class="nav-link text-white" href="./layout/footer">
+                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>Privacy policy</span>
                         </a>
                     </li>
                     <!-- Login Button with Icon -->
