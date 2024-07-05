@@ -189,7 +189,7 @@ ul.policy-list li a:hover {
 </div>
 
 <div class="container">
-<div class="column col-md-6">
+<div class="row">
     <?php
     include 'dbconnection.php';
 
@@ -258,7 +258,7 @@ ul.policy-list li a:hover {
     ?>
 </div>
 
-    <div class="column col-md-6">
+    <div class="row">
         <div class="card">
             <h3>View Jackpots Predictions</h3>
             <p><a href="jackpots.php?id=1" class="jackpot-link">Odibet</a> - Jackpot predictions for Odibet.</p>
