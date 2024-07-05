@@ -3,7 +3,7 @@
 $servername = "localhost";  
 $username = "colloh_collo";     
 $password = "GCEPC3_M_aBWssB";     
-$dbname = "colloh_shop";  
+$dbname = "colloh_shop@";  
 $port = 3306;
 
 // Create connection
