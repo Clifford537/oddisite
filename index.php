@@ -67,6 +67,7 @@
         }
         h1, h3 {
             text-align: center;
+            font-weight:bolder;
         }
         .jackpot-link, .article-link {
             text-decoration: none;
@@ -76,12 +77,18 @@
             border: 1px solid #ddd;
             padding: 20px;
             margin-bottom: 20px;
+            color: #28a745;
         }
         .article h2 {
             text-align: center;
+            font-weight:bold;
+            font-size: 22px;
         }
         .article p {
-            font-size: 14px;
+            font-size: 16px;
+            color: salmon;
+            text-align: justify;
+            font-weight:bold;
         }
         .article-content {
             margin-bottom: 10px;
@@ -89,8 +96,8 @@
         .article img {
             max-width: 100%;
             margin-bottom: 10px;
-            width: 70px;
-            height: 70px;
+            width: 100%;
+            height: 100%;
         }
         
         .card.site-description {
@@ -257,7 +264,7 @@ ul.policy-list li a:hover {
         </div>
 
         <div class="card">
-            <h3>Latest Articles</h3>
+            <h3>Read our Articles</h3>
             <?php
             include 'dbconnection.php';
 
@@ -284,9 +291,7 @@ ul.policy-list li a:hover {
                         // Output article information in a professional format
                         echo '<div class="article">';
                         echo '<h2>' . $title . '</h2>';
-                        echo '<p>Published on: ' . $published_date . '</p>';
-                        echo '<p>Author: ' . $author . '</p>';
-                        echo '<p>Category: ' . $category . '</p>';
+                        echo '<p class=" text-info">Category: ' . $category . '</p>';
                         echo '<div class="article-content">';
                         // Display a part of the content
                         echo '<p>' . substr($content, 0, 200) . '...</p>'; // Display first 200 characters of content
@@ -294,7 +299,7 @@ ul.policy-list li a:hover {
                         if (!empty($image_url)) {
                             echo '<img src="' . $image_url . '" alt="' . $title . '" class="article-image">';
                         }
-                        echo '<p><i class="fa fa-user"></i> ' . $author . '</p>'; // User icon and author name
+                        echo '<p class=" text-dark"><i class="fa fa-user text-success"></i> ' . $author . '</p>'; // User icon and author name
                         echo '</div>'; // Close article div
                     }
                 } else {
