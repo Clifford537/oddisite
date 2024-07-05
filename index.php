@@ -99,8 +99,7 @@
             width: 100%;
             height: 100%;
         }
-        
-        .card.site-description {
+.card.site-description {
     background-color: #f0f0f0;
     color: #444;
     padding: 20px;
@@ -108,19 +107,8 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
-.card-title {
-    font-size: 1.8rem;
-    color: #28a745; /* Green color for headings */
-}
-
-
 .card-body {
     padding: 20px;
-}
-
-.column {
-    margin-bottom: 20px;
 }
 
 .column h5 {
@@ -170,8 +158,24 @@ ul.policy-list li a:hover {
     text-decoration: none;
     color: #0056b3; /* Darker blue for hovered footer links */
 }
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of columns */
+}
+
+.column {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .column {
+        width: 100%; /* Full width for columns on smaller screens */
+    }
+}
     </style>
-</head>
 <body>
     
 <div class="card site-description bg-light">
@@ -185,7 +189,7 @@ ul.policy-list li a:hover {
 </div>
 
 <div class="container">
-<div class="column">
+<div class="column col-md-6">
     <?php
     include 'dbconnection.php';
 
@@ -254,7 +258,7 @@ ul.policy-list li a:hover {
     ?>
 </div>
 
-    <div class="column">
+    <div class="column col-md-6">
         <div class="card">
             <h3>View Jackpots Predictions</h3>
             <p><a href="jackpots.php?id=1" class="jackpot-link">Odibet</a> - Jackpot predictions for Odibet.</p>

@@ -6,14 +6,14 @@ include '../dbconnection.php';
 
 // Check if user is logged in and is admin or superadmin
 if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 
 $isSuperadmin = ($_SESSION['usertype'] === 'SU');
 $isAdmin = ($_SESSION['usertype'] === 'Admin');
 
-$pageTitle = "View Jackpots";
+$pageTitle = "View Matches";
 ?>
 
 <!DOCTYPE html>
@@ -77,56 +77,62 @@ $pageTitle = "View Jackpots";
     <h2>All Matches</h2>
 
     <?php
-    // Function to display a confirmation dialog for delete action
-    function confirmDelete($id) {
-        return "onclick=\"return confirm('Are you sure you want to delete match ID $id?')\"";
+// Establish database connection (assuming $conn is your mysqli connection)
+
+// Function to display a confirmation dialog for delete action
+function confirmDelete($id) {
+    return "onclick=\"return confirm('Are you sure you want to delete match ID $id?')\"";
+}
+
+// Handle delete action
+if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])) {
+    $match_id = $_GET['id'];
+    $sql_delete = "DELETE FROM matches WHERE match_id = ?";
+    $stmt = $conn->prepare($sql_delete);
+    $stmt->bind_param("i", $match_id);
+    if ($stmt->execute()) {
+        echo '<div class="alert alert-success" role="alert">Match ID ' . $match_id . ' deleted successfully.</div>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">Error deleting match ID ' . $match_id . ': ' . $conn->error . '</div>';
     }
+    $stmt->close();
+}
 
-    // Handle delete action
-    if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])) {
-        $match_id = $_GET['id'];
-        $sql_delete = "DELETE FROM matches WHERE id = ?";
-        $stmt = $conn->prepare($sql_delete);
-        $stmt->bind_param("i", $match_id);
-        if ($stmt->execute()) {
-            echo '<div class="alert alert-success" role="alert">Match ID ' . $match_id . ' deleted successfully.</div>';
-        } else {
-            echo '<div class="alert alert-danger" role="alert">Error deleting match ID ' . $match_id . ': ' . $conn->error . '</div>';
-        }
-        $stmt->close();
+// Handle inline update action
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
+    $match_id = $_POST['id'];
+    $column = $_POST['column'];
+    $new_value = $_POST['newValue'];
+
+    $sql_update = "UPDATE matches SET $column = ? WHERE match_id = ?";
+    $stmt = $conn->prepare($sql_update);
+    $stmt->bind_param("si", $new_value, $match_id);
+    if ($stmt->execute()) {
+        echo json_encode(array("success" => true));
+    } else {
+        echo json_encode(array("success" => false, "error" => $conn->error));
     }
+    exit();
+}
 
-    // Handle inline update action
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
-        $match_id = $_POST['id'];
-        $column = $_POST['column'];
-        $new_value = $_POST['newValue'];
+// Fetch all matches
+$sql_select = "SELECT match_id, type, team_1, team_2, team_1_odds, team_2_odds, winteam, match_date FROM matches";
+$result = $conn->query($sql_select);
+?>
 
-        $sql_update = "UPDATE matches SET $column = ? WHERE id = ?";
-        $stmt = $conn->prepare($sql_update);
-        $stmt->bind_param("si", $new_value, $match_id);
-        if ($stmt->execute()) {
-            echo json_encode(array("success" => true));
-        } else {
-            echo json_encode(array("success" => false, "error" => $conn->error));
-        }
-        exit();
-    }
-
-    // Fetch all matches
-    $sql_select = "SELECT id, team1, team2, win_team, odds_team1, odds_team2, date_played FROM matches";
-    $result = $conn->query($sql_select);
-    ?>
+<div class="container">
+    <h2>All Matches</h2>
 
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Type</th>
                 <th>Team 1</th>
                 <th>Team 2</th>
-                <th>Winning Team</th>
                 <th>Odds Team 1</th>
                 <th>Odds Team 2</th>
+                <th>Winning Team</th>
                 <th>Date Played</th>
                 <th>Action</th>
             </tr>
@@ -134,16 +140,17 @@ $pageTitle = "View Jackpots";
         <tbody>
             <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td contenteditable="true" class="editable" data-id="<?php echo $row['id']; ?>" data-column="team1"><?php echo $row['team1']; ?></td>
-                    <td contenteditable="true" class="editable" data-id="<?php echo $row['id']; ?>" data-column="team2"><?php echo $row['team2']; ?></td>
-                    <td contenteditable="true" class="editable" data-id="<?php echo $row['id']; ?>" data-column="win_team"><?php echo $row['win_team']; ?></td>
-                    <td contenteditable="true" class="editable" data-id="<?php echo $row['id']; ?>" data-column="odds_team1"><?php echo $row['odds_team1']; ?></td>
-                    <td contenteditable="true" class="editable" data-id="<?php echo $row['id']; ?>" data-column="odds_team2"><?php echo $row['odds_team2']; ?></td>
-                    <td contenteditable="true" class="editable" data-id="<?php echo $row['id']; ?>" data-column="date_played"><?php echo $row['date_played']; ?></td>
+                    <td><?php echo $row['match_id']; ?></td>
+                    <td><?php echo $row['type']; ?></td>
+                    <td contenteditable="true" class="editable" data-id="<?php echo $row['match_id']; ?>" data-column="team_1"><?php echo $row['team_1']; ?></td>
+                    <td contenteditable="true" class="editable" data-id="<?php echo $row['match_id']; ?>" data-column="team_2"><?php echo $row['team_2']; ?></td>
+                    <td contenteditable="true" class="editable" data-id="<?php echo $row['match_id']; ?>" data-column="team_1_odds"><?php echo $row['team_1_odds']; ?></td>
+                    <td contenteditable="true" class="editable" data-id="<?php echo $row['match_id']; ?>" data-column="team_2_odds"><?php echo $row['team_2_odds']; ?></td>
+                    <td contenteditable="true" class="editable" data-id="<?php echo $row['match_id']; ?>" data-column="winteam"><?php echo $row['winteam']; ?></td>
+                    <td contenteditable="true" class="editable" data-id="<?php echo $row['match_id']; ?>" data-column="match_date"><?php echo $row['match_date']; ?></td>
                     <td>
-                        <button onclick="updateMatch(<?php echo $row['id']; ?>)" class="btn btn-primary">Update</button>
-                        <a href="?action=delete&id=<?php echo $row['id']; ?>" class="btn btn-danger" <?php echo confirmDelete($row['id']); ?>>Delete</a>
+                        <button onclick="updateMatch(<?php echo $row['match_id']; ?>)" class="btn btn-primary">Update</button>
+                        <a href="?action=delete&id=<?php echo $row['match_id']; ?>" class="btn btn-danger" <?php echo confirmDelete($row['match_id']); ?>>Delete</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
@@ -160,7 +167,7 @@ $pageTitle = "View Jackpots";
         const column = row.getAttribute("data-column");
         const newValue = row.textContent.trim();
 
-        fetch("view_matches.php", {
+        fetch("view_plans.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
