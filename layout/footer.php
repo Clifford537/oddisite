@@ -7,19 +7,6 @@
             width: 50%;
             padding: 10px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 12px;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
         .card {
             margin-bottom: 20px;
             border: 1px solid #ddd;
@@ -44,7 +31,7 @@
         }
         
 .card.site-description {
-    background-color: #f0f0f0;
+    background-color: #d1c4e9;
     color: #444;
     padding: 20px;
     margin-top: 20px;
@@ -54,7 +41,8 @@
 
 .card-title {
     font-size: 1.8rem;
-    color: #007bff; /* Blue color for headings */
+    color: black; 
+    font-weight: bold;
 }
 
 .card-body {
@@ -67,7 +55,9 @@
 
 .column h5 {
     font-size: 1rem;
-    color: #007bff; /* Blue color for section headings */
+    color: green; 
+    font-weight: bold;
+    font-size:21px;
 }
 
 ul {
@@ -81,13 +71,13 @@ ul li {
 
 ul.social-media-list li a,
 ul.policy-list li a {
-    color: #007bff; /* Blue color for links */
+    color:#00008b; 
 }
 
 ul.social-media-list li a:hover,
 ul.policy-list li a:hover {
     text-decoration: none;
-    color: #0056b3; /* Darker blue for hovered links */
+    color: #0056b3; 
 }
 
 .policy-list strong {
@@ -105,12 +95,12 @@ ul.policy-list li a:hover {
 }
 
 .row-footer p a {
-    color: #007bff; /* Blue color for footer links */
+    color: #007bff; 
 }
 
 .row-footer p a:hover {
     text-decoration: none;
-    color: #0056b3; /* Darker blue for hovered footer links */
+    color: #0056b3; 
 }
     </style>
 <div class="card site-description">
@@ -128,9 +118,9 @@ ul.policy-list li a:hover {
                 <div class="column">
                     <h5>Social Media & About Us</h5>
                     <ul class="social-media-list">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
+                        <li><a href="../index">Facebook</a></li>
+                        <li><a href="../index">Twitter</a></li>
+                        <li><a href="../index">Instagram</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
                     </ul>
                 </div>
@@ -171,8 +161,8 @@ ul.policy-list li a:hover {
             <div class="row row-footer">
                 <div class="col text-center">
                     <p>Copyright © 2024 Colloh Sure Free Odds. Developed by Weavex Devs. <br>
-                    <a href="#">Tip Us</a> · <a href="#">Report Copyrighted Material</a> · <a href="#">Advertise with Us</a> · <a href="#">Report Website Problem</a><br>
-                    <a href="#">Home</a> · <a href="#">Cookie Policy</a> · <a href="#">Terms of Service</a> · <a href="#">Privacy Policy</a> · <a href="#">Contact Us</a></p>
+                    <a href="index">Tip Us</a> · <a href="index">Report Copyrighted Material</a> · <a href="./layout/footer">Advertise with Us</a> · <a href="index">Report Website Problem</a><br>
+                    <a href="index">Home</a> · <a href="./layout/footer">Cookie Policy</a> · <a href="aboutus">Terms of Service</a> · <a href="aboutus">Privacy Policy</a> · <a href="aboutus">Contact Us</a></p>
                     <p>Kindly note that you cannot play or bet on this site. Colloh Sure Free Odds is only a platform providing tips, predictions, and betting guides for football enthusiasts. If you encounter any issues, please Contact Site Admin.</p>
                 </div>
             </div>
