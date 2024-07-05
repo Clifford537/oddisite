@@ -45,12 +45,7 @@
                     </li>
                     <li>
                     <a class="nav-link text-white" href="aboutus">
-                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>About us</span>
-                        </a>
-                    </li>
-                    <li>
-                    <a class="nav-link text-white" href="aboutus">
-                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>contact</span>
+                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>about us</span>
                         </a>
                     </li>
 
