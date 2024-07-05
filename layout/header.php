@@ -13,45 +13,61 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7843741160373139"
      crossorigin="anonymous"></script>
+    <style>
+        .navbar-nav .nav-link {
+            font-size: 0.875rem; /* Smaller font size for navigation links */
+        }
+        .navbar-brand {
+            font-size: 1.25rem; /* Adjust brand font size */
+        }
+        @media (max-width: 576px) {
+            .navbar-brand {
+                text-align: center;
+                margin: 0 auto;
+                display: block;
+            }
+            .navbar-nav {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand" style="margin: 0 auto; display: block; text-align: center;" href="#">COLLOH BEST FREE ODDS</a>
+            <a class="navbar-brand" href="#">COLLOH BEST FREE ODDS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <!-- OdiPlans Dropdown Menu -->
-                       
-                   <li>
-                    <a class="nav-link text-white" href="index">
-                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>League Predictons </span>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index">
+                            League Predictions
                         </a>
                     </li>
-                    <li>
-                    <a class="nav-link text-white" href="articles">
-                            <span><i class="fas fa-sig1n-in-alt text-warning"></i> articles</span>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="articles">
+                            Articles
                         </a>
                     </li>
-                    <li>
-                    <a class="nav-link text-white" href="jackpots">
-                            <span><i class="fas fa-sig1n-in-alt text-warning"></i> Jackpots </span>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="jackpots">
+                            Jackpots
                         </a>
                     </li>
-                    <li>
-                    <a class="nav-link text-white" href="aboutus">
-                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>about us</span>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="aboutus">
+                            About Us
                         </a>
                     </li>
-
-                    <li>
-                    <a class="nav-link text-white" href="./layout/footer">
-                            <span><i class="fas fa-sig1n-in-alt text-warning"></i>Privacy policy</span>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="./layout/footer">
+                            Privacy Policy
                         </a>
                     </li>
                     <!-- Login Button with Icon -->
@@ -64,3 +80,4 @@
             </div>
         </div>
     </nav>
+
