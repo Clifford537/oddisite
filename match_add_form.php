@@ -1,10 +1,18 @@
-<?php  session_start();
+<?php
+
+session_start();
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
 
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
-} ?>
+}
+
+
+$isSuperadmin = ($_SESSION['usertype'] === 'SU');
+$isAdmin = ($_SESSION['usertype'] === 'Admin');
+$isUser = ($_SESSION['usertype'] === 'User');
+?>
 <?php include './layout/header.php'; ?>
 <body>
     <h1>Add a New Match</h1>

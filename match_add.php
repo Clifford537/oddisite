@@ -1,4 +1,15 @@
 <?php
+// Start session (if not already started)
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
+    // Redirect to login page if not logged in
+    header("Location: ../login.php");
+    exit();
+}
+
+// Continue with your existing code
 include 'dbconnection.php';
 
 $type = $_POST['type'];
