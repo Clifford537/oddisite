@@ -1,6 +1,6 @@
 <?php include './layout/header.php'; ?>
 
-<div class="container">
+<div class="containerjackpot">
     <?php
     // Include database connection
     include 'dbconnection.php';
