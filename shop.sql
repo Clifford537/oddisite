@@ -96,7 +96,7 @@ CREATE TABLE articles (
     content TEXT NOT NULL,
     author VARCHAR(100),
     published_date DATE,
-    category VARCHAR(50),
+    category VARCHAR(200),
     image_url VARCHAR(255)
 );
 
