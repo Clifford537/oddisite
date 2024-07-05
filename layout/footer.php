@@ -1,8 +1,5 @@
 
 <style>
-        .container {
-            display: flex;
-        }
         .column {
             width: 50%;
             padding: 10px;
