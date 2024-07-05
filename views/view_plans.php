@@ -6,14 +6,14 @@ include '../dbconnection.php';
 
 // Check if user is logged in and is admin or superadmin
 if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
 $isSuperadmin = ($_SESSION['usertype'] === 'SU');
 $isAdmin = ($_SESSION['usertype'] === 'Admin');
 
-$pageTitle = "View Matches";
+$pageTitle = "View Jackpots";
 ?>
 
 <!DOCTYPE html>

@@ -1,13 +1,19 @@
 <?php
-// Include the database connection
+// Start session (if not already started)
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
+    // Redirect to login page if not logged in
+    header("Location: ../login.php");
+    exit();
+}
+
+// Continue with your existing code
 include '../dbconnection.php';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Debug: Print the $_POST array to check the received data
-    // Remove or comment out this line in production
-    // print_r($_POST);
-
     // Check if 'usertype' exists in the POST data and set a default value if not
     if (isset($_POST['usertype']) && !empty($_POST['usertype'])) {
         $usertype = $_POST['usertype'];

@@ -1,10 +1,10 @@
 <?php
 // Database configuration
-$servername = "localhost$";  
-$username = "colloh_collo$";     
-$password = "GCEPC3_M_aBWssB$";     
+$servername = "localhost";  
+$username = "colloh_collo";     
+$password = "GCEPC3_M_aBWssB";     
 $dbname = "colloh_shop";  
-$port = 3300;
+$port = 3306;
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname,$port );

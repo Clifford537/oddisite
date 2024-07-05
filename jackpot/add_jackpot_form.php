@@ -15,6 +15,13 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+<?php  session_start();
+
+if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
+
+    header("Location: ../login.php");
+    exit();
+} ?>
 
 <?php
 // Include the header file
