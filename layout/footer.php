@@ -1,43 +1,182 @@
-    <!-- Footer -->
-    <div class="footer text-center">
-        <p>&copy; 2024 Design Team weavex WebDesigns: 
-            <span>
-            <a href="https://wa.me/254706000786" target="_blank">
-                <i class="fas fa-phone-alt text-success"></i> <!-- Call icon -->
-                Text or Call <!-- Phone number -->
-            </span>
-            <a href="https://wa.me/254706000786" target="_blank">
-                <span>
-                    <i class="fab fa-whatsapp text-success" style="margin-left: 5px;"></i> <!-- WhatsApp icon -->
-                    Chat via WhatsApp <!-- Phone number -->
-                </span>
-            </a>
-        </p>
-        <p>Views tearms and conditions</p>
-        <p>
-            <li>Gambling is addictive</li>
-        </p>
-        <p class="text-info">Your Local time <span id="currentTime"></span></p>
-    </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- JavaScript to display current time -->
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const formattedTime = now.toLocaleTimeString();
-            document.getElementById('currentTime').textContent = formattedTime;
+<style>
+        .container {
+            display: flex;
         }
+        .column {
+            width: 50%;
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+        .card p {
+            margin: 5px 0;
+        }
+        h1, h3 {
+            text-align: center;
+        }
+        .jackpot-link, .article-link {
+            text-decoration: none;
+            color: blue;
+        }
+        
+.card.site-description {
+    background-color: #f0f0f0;
+    color: #444;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-        // Update the time every second
-        setInterval(updateTime, 1000);
+.card-title {
+    font-size: 1.8rem;
+    color: #007bff; /* Blue color for headings */
+}
 
-        // Set initial time
-        updateTime();
-    </script>
+.card-body {
+    padding: 20px;
+}
+
+.column {
+    margin-bottom: 20px;
+}
+
+.column h5 {
+    font-size: 1rem;
+    color: #007bff; /* Blue color for section headings */
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+ul.social-media-list li a,
+ul.policy-list li a {
+    color: #007bff; /* Blue color for links */
+}
+
+ul.social-media-list li a:hover,
+ul.policy-list li a:hover {
+    text-decoration: none;
+    color: #0056b3; /* Darker blue for hovered links */
+}
+
+.policy-list strong {
+    font-weight: bold;
+}
+
+.row-footer {
+    margin-top: 20px;
+}
+
+.row-footer p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.row-footer p a {
+    color: #007bff; /* Blue color for footer links */
+}
+
+.row-footer p a:hover {
+    text-decoration: none;
+    color: #0056b3; /* Darker blue for hovered footer links */
+}
+    </style>
+<div class="card site-description">
+        <div class="card-body">
+            <h3 class="card-title text-center">About Colloh Sure Free Odds</h3>
+            <div class="d-flex justify-content-center mt-3">
+                <div class="column">
+                    <h5>Contact Us</h5>
+                    <ul class="contact-list">
+                        <li>Email: support@bettingodds.com</li>
+                        <li>Phone: +254 7</li>
+                        <li>Location Nairobi Kenya</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h5>Social Media & About Us</h5>
+                    <ul class="social-media-list">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="aboutus.php">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h5>Policies & Guidelines</h5>
+                    <ul class="policy-list">
+                        <li>
+                            <strong>Privacy Policy:</strong> At Colloh Sure Free Odds, we are committed to protecting your privacy. We collect personal information for the purpose of providing sure betting odds predictions and improving user experience. Your information is securely stored and used only for legitimate business purposes.
+                        </li>
+                        <li>
+                            <strong>User Agreement:</strong> By using our services, you agree to comply with our terms and conditions. This includes responsible betting practices, age restrictions (18+), and adherence to applicable laws and regulations.
+                        </li>
+                        <li>
+                            <strong>Terms of Service:</strong> Our terms of service outline the rules and guidelines for using Colloh Sure Free Odds. It covers account registration, betting rules, and guidelines for sure betting predictions.
+                        </li>
+                        <li>
+                            <strong>Cookie Policy:</strong> We use cookies to enhance your browsing experience and personalize content. Cookies are essential for the functionality of our website, including session management and analytics.
+                        </li>
+                        <li>
+                            <strong>Responsible Gambling:</strong> Colloh Sure Free Odds promotes responsible gambling. We encourage our users to gamble responsibly and seek help if gambling becomes problematic. Here are some tips:
+                            <ul>
+                                <li>Balance the time that you dedicate to gambling with other leisure activities.</li>
+                                <li>Don’t gamble to escape loneliness or depression; gamble for fun.</li>
+                                <li>Avoid gambling if your clarity has been impaired by alcohol or drugs.</li>
+                                <li>Gamble for entertainment, not as a way to make money.</li>
+                                <li>Only gamble with money you can afford to lose; don’t use money needed for daily living.</li>
+                                <li>Set limits on time and money spent on gambling; stick to these limits.</li>
+                                <li>Accept losses as part of the cost of entertainment; don’t chase losses.</li>
+                                <li>Do not ask for credit or borrow money for gambling.</li>
+                                <li>Always research before placing bets.</li>
+                            </ul>
+                            For more, visit <a href="https://www.begambleaware.org/" target="_blank">BeGambleAware.org</a>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row row-footer">
+                <div class="col text-center">
+                    <p>Copyright © 2024 Colloh Sure Free Odds. Developed by Weavex Devs. <br>
+                    <a href="#">Tip Us</a> · <a href="#">Report Copyrighted Material</a> · <a href="#">Advertise with Us</a> · <a href="#">Report Website Problem</a><br>
+                    <a href="#">Home</a> · <a href="#">Cookie Policy</a> · <a href="#">Terms of Service</a> · <a href="#">Privacy Policy</a> · <a href="#">Contact Us</a></p>
+                    <p>Kindly note that you cannot play or bet on this site. Colloh Sure Free Odds is only a platform providing tips, predictions, and betting guides for football enthusiasts. If you encounter any issues, please Contact Site Admin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

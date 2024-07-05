@@ -1,108 +1,50 @@
+<?php  session_start();
+
+if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
+
+    header("Location: login.php");
+    exit();
+} ?>
 <?php include './layout/header.php'; ?>
-
-<h2 class="form-heading">Add Match</h2>
-<div class="container">
-    <style>
-        .register-form {
-            max-width: 430px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .register-form label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-            color: #333;
-            font-size: 14px;
-        }
-
-        .register-form input[type="text"],
-        .register-form input[type="date"],
-        .register-form select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-
-        .register-form input[type="submit"] {
-            width: 50%;
-            padding: 10px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .register-form input[type="submit"]:hover {
-            background-color: #218838;
-        }
-
-        .form-heading {
-            text-align: center;
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-    </style>
-    <form action="match_add.php" method="POST" class="register-form">
-        <label for="plan_id">Select Plan:</label>
-        <select id="plan_id" name="plan_id" required>
+<body>
+    <h1>Add a New Match</h1>
+    <form action="match_add.php" method="post">
+        <label for="type">Match Type:</label><br>
+        <select id="type" name="type" required>
+            <option value="">Select Match Type</option>
             <?php
-            // Include database connection script
-            require_once 'dbconnection.php';
-
-            // Fetch plans from the database
-            $query = "SELECT id, name FROM plans";
-            $result = mysqli_query($conn, $query);
-
-            // Check if any rows were returned
-            if ($result) {
-                if (mysqli_num_rows($result) > 0) {
-                    // Loop through results and create options for dropdown
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                    }
-                } else {
-                    echo "<option value=''>No plans available</option>";
+            include 'dbconnection.php';
+            $sql = "SELECT type FROM matchtype";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['type'] . "'>" . $row['type'] . "</option>";
                 }
-                // Free result set
-                mysqli_free_result($result);
             } else {
-                echo "Error: " . mysqli_error($conn);
+                echo "<option value=''>No Match Types Available</option>";
             }
-
-            // Close database connection
-            mysqli_close($conn);
+            $conn->close();
             ?>
-        </select>
-        <label for="team1">Team 1:</label>
-        <input type="text" id="team1" name="team1" required>
-        <label for="team2">Team 2:</label>
-        <input type="text" id="team2" name="team2" required>
-        <label for="odds_team1">Odds for Team 1:</label>
-        <input type="text" id="odds_team1" name="odds_team1" required>
-        <label for="odds_team2">Odds for Team 2:</label>
-        <input type="text" id="odds_team2" name="odds_team2" required>
-        <label for="win_team">Winning Team:</label>
-        <input type="text" id="win_team" name="win_team" required>
-        <label for="date_played">Date Played:</label>
-        <input type="date" id="date_played" name="date_played" required>
+        </select><br><br>
+        
+        <label for="team_1">Team 1:</label><br>
+        <input type="text" id="team_1" name="team_1" required><br><br>
+        
+        <label for="team_2">Team 2:</label><br>
+        <input type="text" id="team_2" name="team_2" required><br><br>
+        
+        <label for="team_1_odds">Team 1 Odds:</label><br>
+        <input type="number" step="0.01" id="team_1_odds" name="team_1_odds" required><br><br>
+        
+        <label for="team_2_odds">Team 2 Odds:</label><br>
+        <input type="number" step="0.01" id="team_2_odds" name="team_2_odds" required><br><br>
+        
+        <label for="winteam">Winning Team:</label><br>
+        <input type="text" id="winteam" name="winteam" required><br><br>
+        
+        <label for="match_date">Match Date:</label><br>
+        <input type="date" id="match_date" name="match_date" required><br><br>
+        
         <input type="submit" value="Add Match">
     </form>
-</div>
-
-<?php include './layout/footer.php'; ?>
+    <?php include './layout/footer.php'; ?>

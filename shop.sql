@@ -88,8 +88,30 @@ CREATE TABLE jackpots (
     date_played DATE,
     FOREIGN KEY (jackpottype_id) REFERENCES jackpottypes(id)
 );
+-- articles table
+CREATE TABLE articles (
+    article_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    author VARCHAR(100),
+    published_date DATE,
+    category VARCHAR(50),
+    image_url VARCHAR(255)
+);
 
 INSERT INTO jackpottypes (type) VALUES ('Sportpesa');
 INSERT INTO jackpottypes (type) VALUES ('Betpower');
 INSERT INTO jackpottypes (type) VALUES ('Mozzartbet');
 INSERT INTO jackpottypes (type) VALUES ('Odibet');
+
+-- Insert match types into the matchtype table
+INSERT INTO matchtype (type) VALUES ('Premier League');
+INSERT INTO matchtype (type) VALUES ('La Liga');
+INSERT INTO matchtype (type) VALUES ('Serie A');
+INSERT INTO matchtype (type) VALUES ('Bundesliga');
+INSERT INTO matchtype (type) VALUES ('Ligue 1');
+INSERT INTO matchtype (type) VALUES ('Eredivisie');
+INSERT INTO matchtype (type) VALUES ('Primeira Liga');
+INSERT INTO matchtype (type) VALUES ('MLS');
+INSERT INTO matchtype (type) VALUES ('Brasileirão');
+INSERT INTO matchtype (type) VALUES ('J1 League');

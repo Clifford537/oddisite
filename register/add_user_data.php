@@ -1,3 +1,23 @@
+
+<?php
+
+session_start();
+
+if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
+
+    header("Location: ../login.php");
+    exit();
+}
+
+
+$isSuperadmin = ($_SESSION['usertype'] === 'SU');
+$isAdmin = ($_SESSION['usertype'] === 'Admin');
+$isUser = ($_SESSION['usertype'] === 'User');
+
+
+$pageTitle = "Dashboard";
+?>
+
 <?php
 // Include the database connection
 include '../dbconnection.php';
