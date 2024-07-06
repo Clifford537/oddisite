@@ -4,7 +4,6 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7843741160373139"
     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-7843741160373139">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colloh Best Free Odds</title>
     <meta name="description" content="Colloh Best Free Odds offers league predictions, articles, jackpots, and more. Join us for reliable betting insights.">
