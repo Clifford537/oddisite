@@ -107,17 +107,15 @@ ul.policy-list li a:hover {
                 <div class="column">
                     <h5>Contact Us</h5>
                     <ul class="contact-list">
-                        <li>Email: support@bettingodds.com</li>
-                        <li>Phone: +254 7</li>
+                        <li>Email: Yaaaaa0020@gmail.com</li>
+                        <li>Phone: +254 706000786</li>
                         <li>Location Nairobi Kenya</li>
                     </ul>
                 </div>
                 <div class="column">
                     <h5>Social Media & About Us</h5>
                     <ul class="social-media-list">
-                        <li><a href="../index">Facebook</a></li>
-                        <li><a href="../index">Twitter</a></li>
-                        <li><a href="../index">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/splashy.collins.1">Facebook</a></li>
                         <li><a href="aboutus.php">About Us</a></li>
                     </ul>
                 </div>
