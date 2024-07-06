@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
-<?php  session_start();
+<?php session_start();
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
 
@@ -94,13 +94,13 @@ include '../layout/header.php';
     </select>
 
     <label for="team1">Team 1:</label>
-    <input type="text" id="team1" name="team1" required>
+    <input type="text" id="team1" name="team1" placeholder="Enter Team 1" required>
 
     <label for="team2">Team 2:</label>
-    <input type="text" id="team2" name="team2" required>
+    <input type="text" id="team2" name="team2" placeholder="Enter Team 2" required>
 
     <label for="win">Winning Team/Outcome:</label>
-    <input type="text" id="win" name="win" required>
+    <input type="text" id="win" name="win" placeholder="Enter Winning Team/Outcome" required>
 
     <label for="date_played">Date Played:</label>
     <input type="date" id="date_played" name="date_played" required>
@@ -112,3 +112,33 @@ include '../layout/header.php';
 // Include the footer file
 include '../layout/footer.php';
 ?>
+
+<script>
+    // JavaScript to capitalize the first letter and restrict to text input
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('team1').addEventListener('input', function() {
+            this.value = capitalizeFirstLetter(this.value);
+        });
+
+        document.getElementById('team2').addEventListener('input', function() {
+            this.value = capitalizeFirstLetter(this.value);
+        });
+
+        document.getElementById('win').addEventListener('input', function() {
+            this.value = capitalizeFirstLetter(this.value);
+        });
+
+        function capitalizeFirstLetter(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+        }
+
+        // Restrict input to text only for specified fields
+        var textOnlyFields = ['team1', 'team2', 'win'];
+        textOnlyFields.forEach(function(field) {
+            var input = document.getElementById(field);
+            input.addEventListener('input', function() {
+                this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+            });
+        });
+    });
+</script>

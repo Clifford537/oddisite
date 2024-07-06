@@ -14,7 +14,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SE
     <form action="article_add.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
         <div class="form-group">
             <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" name="title" required>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter the title" required>
             <div class="invalid-feedback">
                 Please enter a title.
             </div>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SE
         
         <div class="form-group">
             <label for="content">Content:</label>
-            <textarea class="form-control" id="content" name="content" rows="4" required></textarea>
+            <textarea class="form-control" id="content" name="content" rows="4" placeholder="Enter the content" required></textarea>
             <div class="invalid-feedback">
                 Please enter the content.
             </div>
@@ -30,7 +30,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SE
         
         <div class="form-group">
             <label for="author">Author:</label>
-            <input type="text" class="form-control" id="author" name="author">
+            <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name">
         </div>
         
         <div class="form-group">
@@ -40,7 +40,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SE
         
         <div class="form-group">
             <label for="category">Category:</label>
-            <input type="text" class="form-control" id="category" name="category">
+            <input type="text" class="form-control" id="category" name="category" placeholder="Enter the category">
         </div>
         
         <div class="form-group">
@@ -78,5 +78,26 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SE
         margin-top: 20px;
     }
 </style>
+
+<script>
+    // JavaScript to capitalize the first letter of inputs
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('title').addEventListener('input', function() {
+            this.value = capitalizeFirstLetter(this.value);
+        });
+        
+        document.getElementById('author').addEventListener('input', function() {
+            this.value = capitalizeFirstLetter(this.value);
+        });
+        
+        document.getElementById('category').addEventListener('input', function() {
+            this.value = capitalizeFirstLetter(this.value);
+        });
+        
+        function capitalizeFirstLetter(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    });
+</script>
 
 <?php include './layout/footer.php'; ?>

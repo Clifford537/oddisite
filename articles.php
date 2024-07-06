@@ -1,5 +1,13 @@
 <?php include './layout/header.php'; ?>
 
+<style>
+    .article-image {
+        width: 400px; /* Set a fixed width */
+        height: 300px; /* Set a fixed height */
+        object-fit: cover; /* Ensure images cover the entire space */
+    }
+</style>
+
 <div class="container mt-5">
     <h1 class="mb-4">Latest Articles</h1>
     <div class="row">
