@@ -1,5 +1,19 @@
 <?php
+session_start();
+
+// Include the database connection
 include 'dbconnection.php';
+
+// Helper function to get device name
+function get_device_name($user_agent) {
+    if (preg_match('/mobile/i', $user_agent)) {
+        return 'Mobile';
+    } else if (preg_match('/tablet/i', $user_agent)) {
+        return 'Tablet';
+    } else {
+        return 'Desktop';
+    }
+}
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,8 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Allow certain file formats (adjust as needed)
-    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif") {
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
     }
@@ -49,6 +62,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($conn->query($sql) === TRUE) {
                 echo "Article added successfully!";
+
+                // Log the user action
+                $user_id = $_SESSION['user_id'];
+                $ip_address = $_SERVER['REMOTE_ADDR'];
+                $device_name = gethostbyaddr($ip_address);
+                $device_type = get_device_name($_SERVER['HTTP_USER_AGENT']);
+                
+                $sql_log = "INSERT INTO user_actions (user_id, action, ip_address, device_name, device_type, timestamp)
+                            VALUES (?, ?, ?, ?, ?, NOW())";
+                $stmt_log = $conn->prepare($sql_log);
+                $action = 'Add Article';
+                $stmt_log->bind_param('issss', $user_id, $action, $ip_address, $device_name, $device_type);
+                $stmt_log->execute();
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }

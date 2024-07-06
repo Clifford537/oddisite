@@ -100,6 +100,20 @@ CREATE TABLE articles (
     image_url VARCHAR(255)
 );
 
+CREATE TABLE user_actions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    action VARCHAR(50) NOT NULL,
+    ip_address VARCHAR(50) NOT NULL,
+    device_name VARCHAR(100) NOT NULL,
+    device_type VARCHAR(20) NOT NULL,
+    browser_type VARCHAR(100) NOT NULL,
+    network_provider VARCHAR(100) NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
 INSERT INTO jackpottypes (type) VALUES ('Sportpesa');
 INSERT INTO jackpottypes (type) VALUES ('Betpower');
 INSERT INTO jackpottypes (type) VALUES ('Mozzartbet');
