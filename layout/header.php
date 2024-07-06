@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7843741160373139"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
     <style>
         .navbar-nav .nav-link {
             font-size: 0.875rem; /* Smaller font size for navigation links */
