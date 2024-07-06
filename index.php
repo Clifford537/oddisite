@@ -136,11 +136,12 @@
         <div class="card-body">
             <h4 class="card-title text-center text-success">Free betting odds and Tips</h4>
             <div class="d-flex justify-content-center align-items-center mt-3">
-                <p class="card-text text-center mb-0">Sports betting tips and sure betting odds predictions, catering to all sports enthusiasts worldwide.</p>
+                <p class="card-text text-center mb-0">Sports betting tips and sure betting odds predictions, catering to all sports enthusiasts worldwide. view predictions now .</p>
                 <img src="./uploads/download.gif" alt="Betting responsibly" class="rounded-circle ml-2" style="width: 50px; height: 50px;">
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row">
             <?php
@@ -174,7 +175,7 @@
                                     <th>Winning Team</th>
                                     <th>Winning Odds</th>
                                 </tr>
-                              </thead>";
+                            </thead>";
                         echo "<tbody>";
                         $total_winning_odds = 0;
                         while ($match = $result_matches->fetch_assoc()) {
@@ -192,12 +193,12 @@
                                     <td>$team_1 vs $team_2</td>
                                     <td>$winteam</td>
                                     <td>$winning_odds</td>
-                                  </tr>";
+                                </tr>";
                         }
                         echo "<tr>
                                 <td colspan='3'><strong>Total Winning Odds</strong></td>
                                 <td><strong>$total_winning_odds</strong></td>
-                              </tr>";
+                            </tr>";
                         echo "</tbody>";
                         echo "</table>";
                         echo "</div>"; // Close table-responsive
@@ -213,81 +214,73 @@
             ?>
         </div>
     </div>
-    <div class="con">
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="card">
-                <h3>View Jackpots Predictions</h3>
-                <p><a href="jackpots.php?id=1" class="jackpot-link">Odibet</a> - Jackpot predictions for Odibet.</p>
-                <p><a href="jackpots.php?id=2" class="jackpot-link">Sportpesa</a> - Jackpot predictions for Sportpesa.</p>
-                <p><a href="jackpots.php?id=3" class="jackpot-link">Betpower</a> - Jackpot predictions for Betpower.</p>
-                <p><a href="jackpots.php?id=4" class="jackpot-link">Mazzartbet</a> - Jackpot predictions for Mazzartbet.</p>
-            </div>
-        </div>
+
+    <div class="container">
         <div class="row">
-            <div class="card">
-                <h3>Read our Articles</h3>
-                <?php
-                include 'dbconnection.php';
-
-                // Fetch latest articles
-                $sql_articles = "SELECT article_id, title, content, author, published_date, category, image_url 
-                                FROM articles 
-                                ORDER BY published_date DESC 
-                                LIMIT 6"; // Limiting to 6 articles for two columns
-
-                $result_articles = $conn->query($sql_articles);
-
-                if ($result_articles) {
-                    if ($result_articles->num_rows > 0) {
-                        $count = 0;
-                        echo '<div class="row">';
-                        while ($article = $result_articles->fetch_assoc()) {
-                            if ($count > 0 && $count % 3 === 0) {
-                                echo '</div><div class="row">';
-                            }
-                            // Process each article
-                            $article_id = $article['article_id'];
-                            $title = htmlspecialchars($article['title']);
-                            $content = htmlspecialchars($article['content']);
-                            $author = htmlspecialchars($article['author']);
-                            $published_date = htmlspecialchars($article['published_date']);
-                            $category = htmlspecialchars($article['category']);
-                            $image_url = htmlspecialchars($article['image_url']);
-
-                            // Output article information in a professional format
-                            echo '<div class="col-md-6">';
-                            echo '<div class="article">';
-                            echo '<h2>' . $title . '</h2>';
-                            echo '<p class="text-info">Category: ' . $category . '</p>';
-                            echo '<div class="article-content">';
-                            // Display a part of the content
-                            echo '<p>' . substr($content, 0, 200) . '...</p>'; // Display first 200 characters of content
-                            echo '</div>';
-                            if (!empty($image_url)) {
-                                echo '<img src="' . $image_url . '" alt="' . $title . '" class="article-image">';
-                            }
-                            echo '<p class="text-dark"><i class="fa fa-user text-success"></i> ' . $author . '</p>'; // User icon and author name
-                            echo '</div>'; // Close article div
-                            echo '</div>'; // Close col-md-6 div
-                            $count++;
-                        }
-                        echo '</div>'; // Close final row
-                    } else {
-                        echo "<p>No articles available.</p>";
-                    }
-                } else {
-                    echo "Error: " . $conn->error;
-                }
-
-                // Close the database connection
-                $conn->close();
-                ?>
-                <p><a href="articles.php" class="article-link">View All Articles</a></p>
-            </div>
+                <div class="card">
+                    <h3>View Jackpots Predictions</h3>
+                    <p><a href="jackpots.php?id=1" class="jackpot-link">Odibet</a> - Jackpot predictions for Odibet.</p>
+                    <p><a href="jackpots.php?id=2" class="jackpot-link">Sportpesa</a> - Jackpot predictions for Sportpesa.</p>
+                    <p><a href="jackpots.php?id=3" class="jackpot-link">Betpower</a> - Jackpot predictions for Betpower.</p>
+                    <p><a href="jackpots.php?id=4" class="jackpot-link">Mazzartbet</a> - Jackpot predictions for Mazzartbet.</p>
+        </div>
         </div>
     </div>
-</div>
+    <div class="container">
+    <h3>Read our Articles</h3>
+    <div class="row">
+        <?php
+        include 'dbconnection.php';
+
+        // Fetch first 10 articles
+        $sql_articles = "SELECT article_id, title, content, author, published_date, category, image_url 
+                        FROM articles 
+                        ORDER BY published_date DESC 
+                        LIMIT 10"; // Limiting to 10 articles
+
+        $result_articles = $conn->query($sql_articles);
+
+        if ($result_articles) {
+            if ($result_articles->num_rows > 0) {
+                while ($article = $result_articles->fetch_assoc()) {
+                    // Process each article
+                    $article_id = $article['article_id'];
+                    $title = htmlspecialchars($article['title']);
+                    $content = htmlspecialchars($article['content']);
+                    $author = htmlspecialchars($article['author']);
+                    $published_date = htmlspecialchars($article['published_date']);
+                    $category = htmlspecialchars($article['category']);
+                    $image_url = htmlspecialchars($article['image_url']);
+
+                    // Output article information in a professional format
+                    echo '<div class="col-md-6 mb-3">';
+                    echo '<div class="card shadow-sm">';
+                    echo '<img src="' . $image_url . '" class="card-img-top" alt="' . $title . '">'; // Article image as card top
+                    echo '<div class="card-body">';
+                    echo '<h2 class="text-success card-title">' . $title . '</h2>';
+                    echo '<p class="card-text text-muted mb-2">Category: ' . $category . '</p>'; // Category with muted text
+                    echo '<p class="card-text">' . substr($content, 0, 200) . '...</p>'; // Article excerpt
+                    echo '<p class="card-text"><small class="text-muted"><i class="fa fa-user text-success"></i> ' . $author . '</small></p>'; // Author info
+                    echo '</div>'; // Close card-body
+                    echo '<div class="card-footer">';
+                    echo '<small class="text-muted">Published on ' . date("M d, Y", strtotime($published_date)) . '</small>'; // Published date
+                    echo '<a href="article_content.php?id=' . $article_id . '" class="btn btn-primary btn-sm float-right">Read</a>'; // Read button
+                    echo '</div>'; // Close card-footer
+                    echo '</div>'; // Close card
+                    echo '</div>'; // Close column
+                }
+            } else {
+                echo "<p class='col-md-12'>No articles available.</p>";
+            }
+        } else {
+            echo "Error: " . $conn->error;
+        }
+
+        // Close the database connection
+        $conn->close();
+        ?>
+    </div> <!-- .row -->
+    <p><a href="articles.php" class="btn btn-primary mt-3">View All Articles</a></p>
+</div> <!-- .container -->
 
     <?php include './layout/footer.php'; ?>
-</body>

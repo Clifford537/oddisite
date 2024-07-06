@@ -1,32 +1,82 @@
-<?php  session_start();
+<?php
+session_start();
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username']) || !isset($_SESSION['usertype'])) {
-
     header("Location: login.php");
     exit();
-} ?>
+}
+?>
+
 <?php include './layout/header.php'; ?>
-<body>
-    <h1>Add an Article</h1>
-    <form action="article_add.php" method="post" enctype="multipart/form-data">
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" required><br><br>
+
+<div class="containerj mt-5">
+    <h1 class="mb-4">Add an Article</h1>
+    <form action="article_add.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+            <div class="invalid-feedback">
+                Please enter a title.
+            </div>
+        </div>
         
-        <label for="content">Content:</label><br>
-        <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea class="form-control" id="content" name="content" rows="4" required></textarea>
+            <div class="invalid-feedback">
+                Please enter the content.
+            </div>
+        </div>
         
-        <label for="author">Author:</label><br>
-        <input type="text" id="author" name="author"><br><br>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" class="form-control" id="author" name="author">
+        </div>
         
-        <label for="published_date">Published Date:</label><br>
-        <input type="date" id="published_date" name="published_date"><br><br>
+        <div class="form-group">
+            <label for="published_date">Published Date:</label>
+            <input type="date" class="form-control" id="published_date" name="published_date">
+        </div>
         
-        <label for="category">Category:</label><br>
-        <input type="text" id="category" name="category"><br><br>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" class="form-control" id="category" name="category">
+        </div>
         
-        <label for="image">Select Image:</label><br>
-        <input type="file" id="image" name="image" accept="image/*"><br><br>
+        <div class="form-group">
+            <label for="image">Select Image:</label>
+            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+        </div>
         
-        <input type="submit" value="Add Article">
+        <button type="submit" class="btn btn-primary">Add Article</button>
     </form>
-    <?php include './layout/footer.php'; ?>
+</div>
+
+<style>
+    /* Custom CSS for form styling */
+ 
+    .containerj {
+        max-width: 600px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 0 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    form {
+        margin-top: 20px;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    .btn-primary {
+        margin-top: 20px;
+    }
+</style>
+
+<?php include './layout/footer.php'; ?>
