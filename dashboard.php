@@ -33,8 +33,9 @@ $pageTitle = "Dashboard";
 
 <?php if ($isSuperadmin): ?>
     <div class="button-container">
-        <button onclick="location.href='delete_users.php'" class="dashboard-button">Delete Users</button>
+        <button onclick="location.href='delete_user.php'" class="dashboard-button">Manage Users</button>
         <button onclick="location.href='./register/add_user_data.php'" class="dashboard-button">Add User</button>
+        <button onclick="location.href='analytics.php'" class="dashboard-button">Analytics</button>
     </div>
 <?php endif; ?>
 

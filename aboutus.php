@@ -30,9 +30,9 @@
         <h2>Contact Us</h2>
         <p>If you have any questions, feedback, or inquiries, please feel free to contact us:</p>
         <ul>
-            <li>Email: support@collohsureodds.com</li>
-            <li>Phone: +1 (123) 456 7890</li>
-            <li>Address: 456 Odds Avenue, Betting City</li>
+            <li>Email: Yaaaaa0020@gmail.com</li>
+            <li>Phone: +254 706000786</li>
+            <li>Location Nairobi Kenya</li>
         </ul>
         
         <h2>Disclaimer</h2>
