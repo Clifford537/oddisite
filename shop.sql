@@ -111,7 +111,8 @@ CREATE TABLE user_actions (
     network_provider VARCHAR(100) NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
-);
+    last_activity TIMESTAMP NULL DEFAULT NULL;
+); 
 
 
 INSERT INTO jackpottypes (type) VALUES ('Sportpesa');

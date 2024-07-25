@@ -142,8 +142,4 @@ main {
         position: relative;
     }
 }
-@media (max-width: 768px) {
-    .column {
-        width: 100%; /* Full width for columns on smaller screens */
-    }
-}
+    
