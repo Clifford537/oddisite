@@ -5,7 +5,7 @@
         flex-wrap: wrap; /* Allows wrapping of columns */
     }
     .column {
-        width: 50%;
+        width: 49%;
         padding: 10px;
         box-sizing: border-box;
     }
